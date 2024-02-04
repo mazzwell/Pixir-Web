@@ -3,6 +3,7 @@ import Typed from 'typed.js';
 import viteLogo from '/xxs.png';
 import './App.css';
 import { Web3Button } from "@thirdweb-dev/react";
+import LoginButton from './auth0';
 
 function Home() {
   const myStyles: React.CSSProperties = {
@@ -35,7 +36,7 @@ function Home() {
         </div>
         <div className="flex-item-right">
           <h1 id="typed-text"></h1>
-          <p> Follow On Twitter <a href=""> Click</a> </p>
+           <LoginButton/> 
           <p> Follow On Twitter <a href=""> Click</a> </p>
           <div className='wbutton'> 
           <Web3Button style={myStyles}

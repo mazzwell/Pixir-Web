@@ -21,7 +21,7 @@ const Profile = () => {
           <p>{localStorage.getItem("username")}</p>
         </div>
       ) : (
-        <button onClick={() => loginWithRedirect()}>Log In</button>
+        <a>Follow on twitter <button onClick={() => loginWithRedirect()}> Log In</button></a>
       )}
     </div>
   );
