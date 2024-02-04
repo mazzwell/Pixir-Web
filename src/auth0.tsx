@@ -1,18 +1,22 @@
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Profile = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
 
   if (isLoading) {
     return <div>Loading ...</div>;
   }
 
   return (
-    isAuthenticated && user ? (
-      <div>
-        <h2>{user.name}</h2>
-      </div>
-    ) : null
+    <div>
+      {isAuthenticated ? (
+        <div>
+          <p>{user?.name}</p>
+        </div>
+      ) : (
+        <button onClick={() => loginWithRedirect()}>Log In</button>
+      )}
+    </div>
   );
 };
 
