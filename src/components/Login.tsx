@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { auth, twitterProvider } from './firebase';
+import {  auth, twitterProvider } from './firebase';
+import { User } from 'firebase/auth';
 import Task from './task';
 
 const TwitterLoginButton: React.FC = () => {
