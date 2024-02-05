@@ -5,6 +5,11 @@ import TwitterLoginButton from './components/Login';
 
 function Home() {
   return (
+    <>    <div className="pagecontainer">
+    <h1>Pixir Quest</h1>
+    <p>Complete your Journey to earn rewards</p>
+  </div>
+
     <div className="container">
       <div className="flex-container">
         <div className="flex-item-left">
@@ -16,6 +21,7 @@ function Home() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

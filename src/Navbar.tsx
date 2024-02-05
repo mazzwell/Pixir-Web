@@ -23,7 +23,7 @@ function Navbar() {
           <Link to="/airdrop">Airdrop</Link>
         </li>
         <li className={`menu-list ${menuActive ? 'active' : ''}`}>
-          <Link to="/stake">Stake</Link>
+          <Link to="/rules">Rules</Link>
         </li>
         <li className={`menu-list ${menuActive ? 'active' : ''}`}>
           <Link to="/">Twitter</Link>

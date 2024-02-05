@@ -6,12 +6,12 @@ function Home() {
     <>
     <div className="pagecontainer">
       <h1>LeaderBoard</h1>
-      <p>Coming Soon</p>
+      <p>Total price Pool 🔥 1M $Pixir</p>
     </div>
     <div className="container">
       <div className="flex-container">
         <div className="flex-item-left">
-        <h1>x</h1>
+        <img src='/ld.png'/>
         </div>
         <div className="flex-item-right">
           <h1>x</h1>
