@@ -1,5 +1,4 @@
 import './App.css';
-import LoginButton from './auth0';
 
 function Home() {
 
@@ -8,7 +7,6 @@ function Home() {
     <div className="pagecontainer">
       <h1>LeaderBoard</h1>
       <p>Coming Soon</p>
-      <LoginButton/>
     </div>
     <div className="container">
       <div className="flex-container">

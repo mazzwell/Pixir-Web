@@ -20,10 +20,10 @@ function Navbar() {
           &#9776;
         </li>
         <li className={`menu-list ${menuActive ? 'active' : ''}`}>
-          <Link to="/section1">Stake</Link>
+          <Link to="/airdrop">Airdrop</Link>
         </li>
         <li className={`menu-list ${menuActive ? 'active' : ''}`}>
-          <Link to="/section2">Airdrop</Link>
+          <Link to="/stake">Stake</Link>
         </li>
         <li className={`menu-list ${menuActive ? 'active' : ''}`}>
           <Link to="/">Twitter</Link>
