@@ -3,7 +3,7 @@ import { auth, twitterProvider } from './firebase';
 import Task from './task';
 
 const TwitterLoginButton: React.FC = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
 
   const handleTwitterLogin = async () => {
     try {
@@ -17,9 +17,9 @@ const TwitterLoginButton: React.FC = () => {
   };
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        setUser(user);
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        setUser(authUser);
       }
     });
 
@@ -29,8 +29,7 @@ const TwitterLoginButton: React.FC = () => {
   return (
     <div>
       {user ? (
-
-        <p>Welcome, {user.displayName}!<Task /></p>
+        <p>Welcome, {user.displayName || 'User'}!<Task /></p>
       ) : (
         <button onClick={handleTwitterLogin}>
           Login with Twitter
