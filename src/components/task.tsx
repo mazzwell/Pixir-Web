@@ -65,23 +65,24 @@ function Task() {
   return (
     <>
       {!web3ButtonVisible && (
-        <> <p>Complete task to mint NFT</p>
+        <>
+          <p>Complete task to mint NFT</p>
           <p>
-            <button style={buttonStylesFollow} disabled={followLoading} onClick={handleFollow}>
+            <a href="https://your-follow-link" target="_blank" rel="noopener noreferrer" style={buttonStylesFollow} disabled={followLoading} onClick={handleFollow}>
               {followLoading ? "Loading" : isFollowed ? "Followed" : "Follow ..."}
-            </button>
+            </a>
           </p>
           <p>
-            <button style={buttonStylesRetweet} disabled={retweetLoading} onClick={handleRetweet}>
+            <a href="https://your-retweet-link" target="_blank" rel="noopener noreferrer" style={buttonStylesRetweet} disabled={retweetLoading} onClick={handleRetweet}>
               {retweetLoading ? "Loading" : isRetweeted ? "Retweeted" : "Retweet"}
-            </button>
+            </a>
           </p>
         </>
       )}
 
       {web3ButtonVisible && (
         <div className="wbutton"> 
-        <p> Now Mint Your NFT</p>
+          <p> Now Mint Your NFT</p>
           <Web3Button
             style={web}
             contractAddress="0x523B792D14a47cf8dc985bb4562908303FAEe43E"
