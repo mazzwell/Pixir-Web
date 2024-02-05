@@ -11,7 +11,7 @@ function Home() {
     <div className="container">
       <div className="flex-container">
         <div className="flex-item-left">
-        <img src='/ld.png'/>
+        <img className='nft' src='/ld.png'/>
         </div>
         <div className="flex-item-right">
           <h1>x</h1>

@@ -11,6 +11,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: auto;
+
 }
 
 a {
@@ -36,7 +39,7 @@ body {
 
 @media (max-width: 800px) {
   body {
-    overflow: auto;
+    overflow-y: scroll;
   }
 }
 
