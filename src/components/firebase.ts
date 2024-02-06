@@ -2,13 +2,13 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, TwitterAuthProvider } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB0WZhW3YQcUTH8zdzLKgPv6vh3S0EAro8",
-  authDomain: "pixir-6d3cb.firebaseapp.com",
-  projectId: "pixir-6d3cb",
-  storageBucket: "pixir-6d3cb.appspot.com",
-  messagingSenderId: "1035920511052",
-  appId: "1:1035920511052:web:56309b94eb21c1f2c824e9",
-  measurementId: "G-KPZQTLXNLG"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
