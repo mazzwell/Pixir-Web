@@ -38,14 +38,14 @@ function Task() {
 
   const handleFollow = async () => {
     setFollowLoading(true);
-    await wait(7000);
+    await wait(12000);
     setIsFollowed(true);
     setFollowLoading(false);
   };
 
   const handleRetweet = async () => {
     setRetweetLoading(true);
-    await wait(7000);
+    await wait(12000);
     setIsRetweeted(true);
     setRetweetLoading(false);
   };
@@ -68,12 +68,12 @@ function Task() {
   <>
     <p>Complete task to mint NFT</p>
     <p>
-      <a href="https://your-follow-link" target="_blank" rel="noopener noreferrer" style={buttonStylesFollow} onClick={handleFollow}>
+      <a href="https://twitter.com/intent/follow?screen_name=pixirweb" target="_blank" rel="noopener noreferrer" style={buttonStylesFollow} onClick={handleFollow}>
         {followLoading ? "Loading" : isFollowed ? "Followed" : "Follow ..."}
       </a>
     </p>
     <p>
-      <a href="https://your-retweet-link" target="_blank" rel="noopener noreferrer" style={buttonStylesRetweet} onClick={handleRetweet}>
+      <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftwitter.com%2Fpixirweb%2Fstatus%2F1754823771175764382&text=Free%20Mint%20Your%20Pixir%20NFT%20%7C%20follow%20--%3E%20%20@_morkie%20%26%20@pixirweb&hashtags=freemint%2Cnft" target="_blank" rel="noopener noreferrer" style={buttonStylesRetweet} onClick={handleRetweet}>
         {retweetLoading ? "Loading" : isRetweeted ? "Retweeted" : "Retweet"}
       </a>
     </p>

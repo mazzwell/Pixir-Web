@@ -1,4 +1,4 @@
-import viteLogo from '/xxs.png';
+import viteLogo from '/pixir.png';
 import './App.css';
 import TwitterLoginButton from './components/Login';
 

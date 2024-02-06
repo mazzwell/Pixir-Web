@@ -14,7 +14,8 @@ function Home() {
         <img className='nft' src='/ld.png'/>
         </div>
         <div className="flex-item-right">
-          <h1>x</h1>
+          <p> The leaderboard refreshes every 24 hours</p>
+          <a>1) 0xA239366d40b724dD2b7F1E5750E82cf4D56Aa7c2 </a>
         </div>
       </div>
     </div>

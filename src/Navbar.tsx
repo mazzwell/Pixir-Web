@@ -26,7 +26,7 @@ function Navbar() {
           <Link to="/rules">Rules</Link>
         </li>
         <li className={`menu-list ${menuActive ? 'active' : ''}`}>
-          <Link to="/">Twitter</Link>
+          <Link to="https://twitter.com/pixirweb">Twitter</Link>
         </li>
       </ul>
     </nav>
