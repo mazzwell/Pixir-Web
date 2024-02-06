@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {  auth, twitterProvider } from './firebase';
 import { User } from 'firebase/auth';
+import { auth, twitterProvider } from './firebase';
 import Task from './task';
 
 const TwitterLoginButton: React.FC = () => {
@@ -30,7 +30,10 @@ const TwitterLoginButton: React.FC = () => {
   return (
     <div>
       {user ? (
-        <p>Welcome, {user.displayName || 'User'}!<Task /></p>
+        <>
+          Welcome, {user.displayName || 'User'}!
+          <Task />
+        </>
       ) : (
         <button onClick={handleTwitterLogin}>
           Login with Twitter
