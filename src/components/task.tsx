@@ -85,7 +85,7 @@ function Task() {
           <p> Now Mint Your NFT</p>
           <Web3Button
             style={web}
-            contractAddress="0x523B792D14a47cf8dc985bb4562908303FAEe43E"
+            contractAddress="0x8b2eb805A9066301959ecD7CfbD31b3F49d360cC"
             onSuccess={(_result) => alert("Success!")}
             onError={(_error) => alert("Not Enough Matic")}
             action={async (contract) => {
