@@ -42,5 +42,4 @@ const TwitterLoginButton: React.FC = () => {
     </div>
   );
 };
-
 export default TwitterLoginButton;
