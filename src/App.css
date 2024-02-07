@@ -92,7 +92,7 @@ ul {
 .logox {
   font-size: 24px;
   font-weight: bold;
-  color: rgb(134, 191, 0);
+  color: #86bf00;
   text-decoration: none;
   justify-content: left;
   font-size: xx-large;
@@ -137,8 +137,61 @@ li {
   text-align: center;
 }
 
-.wbutton{
-  margin-top: 50px;
-  padding: 10px;
+.xb{
+
+ margin-right: 50px;
+ padding: 3px;
 }
 
+
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.xinput[type="text"] {
+  padding: 15px;
+  padding-right: 80px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  width: 300px; 
+  box-sizing: border-box;
+  background-color: transparent;
+  font-weight: 800;
+}
+
+.xbutton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 8px;
+  margin: 5px 2px;
+  border: none;
+  border-radius: 0 5px 5px 0; 
+  background-color: #86bf00;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+
+.xbutton:hover {
+  background-color: #6a9504;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  gap: 10px; /* Space between each user info */
+}
+
+.user-info {
+  display: flex; /* Use Flexbox for internal alignment */
+  align-items: center; /* Vertically center items */
+  gap: 8px; /* Space between index, address, and points */
+}
+
+.user-info span {
+  white-space: nowrap; /* Prevent the text from wrapping */
+}
