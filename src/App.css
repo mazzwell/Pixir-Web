@@ -72,61 +72,77 @@
 
 }
 
+.logox {
+  color: #86bf00;
+  font-size: xx-large;
+  margin-left: 5rem;
+
+}
+@media (max-width: 768px) {
+  .logox {
+    color: #86bf00;
+    font-size: xx-large;
+    margin-left: 0rem;
+
+  }
+}
+
 
 nav {
   background-color: #333;
-  padding: 10px;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  width: 100%;
+  color: #fff;
   font-size: xx-large;
 }
 
-.logox {
-  font-size: 24px;
-  font-weight: bold;
-  color: #86bf00;
-  text-decoration: none;
-  justify-content: left;
-  font-size: xx-large;
+
+.logo-container {
+  flex-grow: 1;
 }
 
 .menu-icon {
   display: none;
   cursor: pointer;
-  font-size: 20px;
-  color: #fff;
+  font-size: 30px;
 }
 
-li {
+.menu-list {
+  list-style: none;
+  display: flex;
   margin: 0;
+  padding: 0;
+  transition: transform 0.3s ease; 
 }
 
+.menu-list li {
+  padding: 10px;
+  margin-right: 10rem;
+}
 
-@media (max-width: 768px) {
-  ul {
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: smaller;
-  }
+.menu-list.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px; 
+  right: 0;
+  background-color: #222; 
+  width: 100%;
+  transform: scale(1); 
+  font-size: large;
+}
 
+@media (max-width: 800px) {
   .menu-icon {
     display: block;
   }
 
-  .menu-list {
-    display: none;
+  .menu-list, .menu-list.active {
+    display: none; 
   }
 
   .menu-list.active {
-    display: flex;
+    display: block; 
   }
 }
 
@@ -184,16 +200,16 @@ li {
 
 .user-list {
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  gap: 10px; /* Space between each user info */
+  flex-direction: column; 
+  gap: 10px; 
 }
 
 .user-info {
-  display: flex; /* Use Flexbox for internal alignment */
-  align-items: center; /* Vertically center items */
-  gap: 8px; /* Space between index, address, and points */
+  display: flex;
+  align-items: center;
+  gap: 8px; 
 }
 
 .user-info span {
-  white-space: nowrap; /* Prevent the text from wrapping */
+  white-space: nowrap;
 }

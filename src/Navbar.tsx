@@ -11,26 +11,18 @@ function Navbar() {
 
   return (
     <nav>
-      <ul>
-        <li>
-          <Link to="/" className="logox">Pixir
-          </Link>
-        </li>
-        <li className="menu-icon" onClick={toggleMenu}>
-          &#9776;
-        </li>
-        <li className={`menu-list ${menuActive ? 'active' : ''}`}>
-          <Link to="/airdrop">Airdrop</Link>
-        </li>
-        <li className={`menu-list ${menuActive ? 'active' : ''}`}>
-          <Link to="/rules">Rules</Link>
-        </li>
-        <li className={`menu-list ${menuActive ? 'active' : ''}`}>
-          <Link to="https://twitter.com/pixirweb">Twitter</Link>
-        </li>
+      <div className="logo-container">
+        <Link to="/" className="logox">Pixir</Link>
+      </div>
+      <div className="menu-icon" onClick={toggleMenu}>
+        <span>&#9776;</span>
+      </div>
+      <ul className={`menu-list ${menuActive ? 'active' : ''}`}>
+        <li><Link to="/airdrop">Airdrop</Link></li>
+        <li><Link to="/rules">Rules</Link></li>
+        <li><Link to="https://twitter.com/pixirweb">Twitter</Link></li>
       </ul>
     </nav>
   );
 }
-
 export default Navbar;
