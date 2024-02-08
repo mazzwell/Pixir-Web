@@ -197,18 +197,29 @@ function Task() {
 
   if (successStatus) {
     return (
-      <> 
+      <>
+      <br></br>
+      <br></br>
+       <Web3Button
+                style={web}
+                contractAddress="0x8b2eb805A9066301959ecD7CfbD31b3F49d360cC"
+                onError={(error) => console.error("Minting error:", error)}
+                action={async (contract) => {
+                  await contract.erc721.claim(1);
+                } }
+              > Mint Again
+              </Web3Button>
+              <br></br>
         <p>Your Points: &nbsp; {points}</p>
         <p>Your Referral ID: &nbsp; {referralID}</p>
         {!evmAddressSubmitted && (
-          <div className="input-wrapper" >
-            <input 
-            className="xinput"
-              type="text" 
-              placeholder="Bind EVM wallet address" 
-              value={evmAddress} 
-              onChange={(e) => setEvmAddress(e.target.value)}
-            />
+          <div className="input-wrapper">
+            <input
+              className="xinput"
+              type="text"
+              placeholder="Bind EVM wallet address"
+              value={evmAddress}
+              onChange={(e) => setEvmAddress(e.target.value)} />
             <button className="xbutton" onClick={handleEvmAddressSubmit}>{">"}</button>
           </div>
         )}

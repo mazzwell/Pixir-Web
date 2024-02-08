@@ -1,13 +1,12 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getDatabase, ref, get, query, orderByChild, limitToLast } from "firebase/database";
 import './App.css';
 
 // Define a type for user data
 type User = {
-  evmAddress: string;
+  evmAddress?: string; // Marking evmAddress as optional to handle cases where it might be undefined
   points: number;
 };
-
 
 function Home() {
   const [topUsers, setTopUsers] = useState<User[]>([]);
@@ -23,8 +22,7 @@ function Home() {
       if (snapshot.exists()) {
         const data = snapshot.val();
         // Convert the data object to an array of User objects and sort by points descending
-        const usersArray = Object.values(data as Record<string, User>) // Assert data as an object of user records
-  .sort((a, b) => b.points - a.points);
+        const usersArray: User[] = Object.values(data as Record<string, User>).sort((a, b) => b.points - a.points);
         setTopUsers(usersArray);
       } else {
         console.log("No data available");
@@ -38,28 +36,32 @@ function Home() {
     <>
       <div className="pagecontainer">
         <h1>LeaderBoard</h1>
-        <p>Total price Pool 🔥 1M $Pixir</p>
+        <p>Total prize Pool 🔥 1.5M $Pixir</p>
       </div>
       <div className="container">
         <div className="flex-container">
           <div className="flex-item-left">
             <img className='nft' src='/ld.png' alt="NFT"/>
-          </div><div className="flex-item-right">
-  <p>The leaderboard refreshes every 24 hours</p>
-  <div className="user-list">
-    {topUsers.map((user, index) => {
-      const displayAddress = `${user.evmAddress.slice(0, 6)}...${user.evmAddress.slice(-4)}`;
-      return (
-        <div className="user-info" key={index}>
-          <span>{index + 1})</span>
-          <span>{displayAddress}</span>
-          <span>- {user.points} Points</span>
-        </div>
-      );
-    })}
-  </div>
-</div>
-   
+          </div>
+          <div className="flex-item-right">
+            <p> Referral Leaderboard </p>
+            <div className="user-list">
+              {topUsers.map((user, index) => {
+                // Safely handle potentially undefined evmAddress
+                const evmAddress = user.evmAddress || 'N/A'; // Fallback to 'N/A' if evmAddress is undefined
+                const displayAddress = evmAddress.length > 10 ? `${evmAddress.slice(0, 6)}...${evmAddress.slice(-4)}` : evmAddress;
+                return (
+                  <div className="user-info" key={index}>
+                    <span>{index + 1})</span>
+                    <span>{displayAddress}</span>
+                    <span>- {user.points} Points</span>
+                  </div>
+                );
+              })}
+            </div>
+            <p> NFT Holder Leaderboard </p>
+            <a href='https://polygonscan.com/token/0x8b2eb805A9066301959ecD7CfbD31b3F49d360cC#balances'   target="_blank"><button>View on PolygonScan</button></a>
+          </div>
         </div>
       </div>
     </>
