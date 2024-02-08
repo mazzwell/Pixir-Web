@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getDatabase, ref, get, query, orderByChild, limitToLast } from "firebase/database";
 import './App.css';
 
