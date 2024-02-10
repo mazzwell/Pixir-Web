@@ -14,7 +14,7 @@ function Home() {
   useEffect(() => {
     const fetchTopUsers = async () => {
       const db = getDatabase();
-      const usersRef = ref(db, 'users');
+      const usersRef = ref(db, 'busers');
       // Query the top 3 users based on points
       const topUsersQuery = query(usersRef, orderByChild('points'), limitToLast(3));
 
@@ -52,9 +52,9 @@ function Home() {
                 const displayAddress = evmAddress.length > 10 ? `${evmAddress.slice(0, 6)}...${evmAddress.slice(-4)}` : evmAddress;
                 return (
                   <div className="user-info" key={index}>
-                    <span>{index + 1})</span>
-                    <span>{displayAddress}</span>
-                    <span>- {user.points} Points</span>
+                    <span><a> {index + 1})</a></span>
+                    <span><a> {displayAddress}</a></span>
+                    <span><a>- {user.points} Points </a></span>
                   </div>
                 );
               })}

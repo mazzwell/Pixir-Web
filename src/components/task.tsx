@@ -17,7 +17,7 @@ function Task() {
   const [referralCodeInput, setReferralCodeInput] = useState(""); // State for storing the inputted referral code
   const [evmAddress, setEvmAddress] = useState(""); // For storing user's EVM address input
   const [evmAddressSubmitted, setEvmAddressSubmitted] = useState(false); // To track if the EVM address has been submitted
-
+  const [referralSubmitted, setReferralSubmitted] = useState(false);
 
   const commonButtonStyles: React.CSSProperties = {
     color: "#fff",
@@ -47,15 +47,15 @@ function Task() {
   
 
   useEffect(() => {
-    // Check user's success status and fetch existing EVM address if available
-    const checkSuccessStatus = async () => {
+    // Check user's success status, referral submission, and fetch existing EVM address if available
+    const fetchData = async () => {
       if (!auth.currentUser) {
         console.error("No user authenticated.");
         setSuccessStatus(false);
         return;
       }
-
-      const dbRef = ref(getDatabase(), `users/${auth.currentUser.uid}`);
+  
+      const dbRef = ref(getDatabase(), `busers/${auth.currentUser.uid}`);
       try {
         const snapshot = await get(dbRef);
         if (snapshot.exists()) {
@@ -65,8 +65,10 @@ function Task() {
           setReferralID(data.referralID || "");
           if (data.evmAddress) {
             setEvmAddress(data.evmAddress);
-            setEvmAddressSubmitted(true); // Hide EVM address input if already submitted
+            setEvmAddressSubmitted(true);
           }
+          // Update referralSubmitted state based on the database value
+          setReferralSubmitted(!!data.referralSubmitted);
         } else {
           setSuccessStatus(false);
         }
@@ -75,9 +77,10 @@ function Task() {
         setSuccessStatus(false);
       }
     };
-
-    checkSuccessStatus();
+  
+    fetchData();
   }, []);
+  
 
   const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -115,7 +118,7 @@ function Task() {
     
     const uid = auth.currentUser.uid;
     const referralID = uid.slice(-6); // Get the last 6 digits of the UID
-    const dbRef = ref(getDatabase(), `users/${uid}`);
+    const dbRef = ref(getDatabase(), `busers/${uid}`);
   
     try {
       // Update success status, points, and referral ID in a single operation
@@ -138,7 +141,7 @@ function Task() {
     }
   
     // Check if the current user has already submitted a referral code
-    const currentUserRef = ref(getDatabase(), `users/${auth.currentUser?.uid}`);
+    const currentUserRef = ref(getDatabase(), `busers/${auth.currentUser?.uid}`);
     const currentUserSnapshot = await get(currentUserRef);
     if (currentUserSnapshot.exists() && currentUserSnapshot.val().referralSubmitted) {
       alert("You have already submitted a referral code.");
@@ -146,24 +149,23 @@ function Task() {
     }
   
     // Fetch all users to find the one with the matching referral ID
-    const dbRef = ref(getDatabase(), `users`);
+    const dbRef = ref(getDatabase(), `busers`);
     try {
       const snapshot = await get(dbRef);
       if (snapshot.exists()) {
         let referrerFound = false;
         snapshot.forEach((childSnapshot) => {
           const childData = childSnapshot.val();
-          if (childData.referralID === referralCodeInput) {
-            // Referrer found, update their points
+          if (childData.referralID === referralCodeInput ) {
             const newPoints = (childData.points || 100) + 10; // Add 10 points to the existing points
-            const userRef = ref(getDatabase(), `users/${childSnapshot.key}`);
+            const userRef = ref(getDatabase(), `busers/${childSnapshot.key}`);
             update(userRef, { points: newPoints });
             referrerFound = true;
           }
         });
         if (referrerFound) {
-          // Mark referralSubmitted as true for the current user to prevent multiple submissions
           update(currentUserRef, { referralSubmitted: true });
+          setReferralSubmitted(true); // Indicates successful referral submission
           alert("Referral code accepted. Now complete the task");
         } else {
           alert("Invalid referral code.");
@@ -181,7 +183,7 @@ function Task() {
       alert("Please enter an EVM address.");
       return;
     }
-    const currentUserRef = ref(getDatabase(), `users/${auth.currentUser?.uid}`);
+    const currentUserRef = ref(getDatabase(), `busers/${auth.currentUser?.uid}`);
     try {
       await update(currentUserRef, { evmAddress: evmAddress });
       setEvmAddressSubmitted(true);
@@ -202,7 +204,7 @@ function Task() {
       <br></br>
        <Web3Button
                 style={web}
-                contractAddress="0x8b2eb805A9066301959ecD7CfbD31b3F49d360cC"
+                contractAddress="0x1Bc34Fc48b623aDb47A04103859fCE7a36C8875b"
                 onError={(error) => console.error("Minting error:", error)}
                 action={async (contract) => {
                   await contract.erc721.claim(1);
@@ -231,29 +233,37 @@ function Task() {
     <>
       {!web3ButtonVisible && (
         <> <br></br>
-
-<div className="input-wrapper">
-            <input 
-              className="xinput"
-              type="text" 
-              placeholder="Enter referral code" 
-              value={referralCodeInput} 
-              onChange={(e) => setReferralCodeInput(e.target.value)} 
-            />
-            <button className="xbutton" onClick={handleReferralSubmit}>{">"}</button>
-          </div>
-          <p>Complete task to mint NFT</p>
-          
-          <p>
-            <a href="#" target="_blank" rel="noopener noreferrer" onClick={handleFollow} style={buttonStylesFollow} >
-              {followLoading ? "Loading" : isFollowed ? "Followed" : "Follow ..."}
-            </a>
-          </p>
-          <p>
-            <a href="#" target="_blank" rel="noopener noreferrer" style={buttonStylesRetweet} onClick={handleRetweet}>
-              {retweetLoading ? "Loading" : isRetweeted ? "Retweeted" : "Retweet"}
-            </a>
-          </p>
+        {
+  !referralSubmitted && (
+    <><p>Example: Q6DPE3</p><div className="input-wrapper">
+                <input
+                  className="xinput"
+                  type="text"
+                  placeholder="Enter referral code"
+                  value={referralCodeInput}
+                  onChange={(e) => setReferralCodeInput(e.target.value)} />
+                <button className="xbutton" onClick={handleReferralSubmit}>{">"}</button>
+              </div></>
+  )
+}
+          {
+  referralSubmitted && (
+    <>
+      <p>Complete task to mint NFT</p>
+      
+      <p>
+        <a href="https://twitter.com/intent/follow?screen_name=pixirweb" target="_blank" rel="noopener noreferrer" onClick={handleFollow} style={buttonStylesFollow}>
+          {followLoading ? "Loading" : isFollowed ? "Followed" : "Follow ..."}
+        </a>
+      </p>
+      <p>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftwitter.com%2Fpixirweb%2Fstatus%2F1754823771175764382&text=Join%20The%20Hunt%20" target="_blank" rel="noopener noreferrer" style={buttonStylesRetweet} onClick={handleRetweet}>
+          {retweetLoading ? "Loading" : isRetweeted ? "Retweeted" : "Retweet"}
+        </a>
+      </p>
+    </>
+  )
+}
         </>
       )}
       {web3ButtonVisible && (
@@ -261,7 +271,7 @@ function Task() {
           <p>Now Mint Your NFT</p>
           <Web3Button
             style={web}
-            contractAddress="0x8b2eb805A9066301959ecD7CfbD31b3F49d360cC"
+            contractAddress="0x1Bc34Fc48b623aDb47A04103859fCE7a36C8875b"
             onSuccess={handleSuccess}
             onError={(error) => console.error("Minting error:", error)}
             action={async (contract) => {
