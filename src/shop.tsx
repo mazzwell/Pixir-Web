@@ -50,7 +50,6 @@ function Section3() {
             <Web3Button
                 style={web}
                 contractAddress="0x7371A967C8F53F0B4586F5EbCaFcA9EacEcCCF41"
-                onError={(_error) => alert("Not Enoght Matic")}
                 action={async (contract) => {
                   await contract.erc20.claim(inputValue);
                 }}
