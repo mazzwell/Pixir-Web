@@ -202,14 +202,6 @@ function Task() {
       <>
       <br></br>
       <br></br>
-       <Web3Button
-                style={web}
-                contractAddress="0x8b2eb805A9066301959ecD7CfbD31b3F49d360cC"
-                action={async (contract) => {
-                  await contract.erc721.claim(1);
-                } }
-              > Mint Again
-              </Web3Button>
               <br></br>
         <p>Your Points: &nbsp; {points}</p>
         <p>Your Referral ID: &nbsp; {referralID}</p>
@@ -269,7 +261,9 @@ function Task() {
         <div>
           <p>Now Mint Your NFT</p>
           <a href="https://morkie.xyz/pixir"
+          target="_blank" rel="noopener noreferrer"
             style={web}
+            onClick={handleSuccess}
           >
             {web3ButtonLoading ? "Loading..." : "Claim NFT"}
           </a>
