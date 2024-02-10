@@ -205,7 +205,6 @@ function Task() {
        <Web3Button
                 style={web}
                 contractAddress="0x8b2eb805A9066301959ecD7CfbD31b3F49d360cC"
-                onError={(_error) => alert("Not Enough Matic")}
                 action={async (contract) => {
                   await contract.erc721.claim(1);
                 } }
