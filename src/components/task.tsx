@@ -204,8 +204,8 @@ function Task() {
       <br></br>
        <Web3Button
                 style={web}
-                contractAddress="0x1Bc34Fc48b623aDb47A04103859fCE7a36C8875b"
-                onError={(error) => console.error("Minting error:", error)}
+                contractAddress="0x8b2eb805A9066301959ecD7CfbD31b3F49d360cC"
+                onError={(_error) => alert("Not Enoght Matic")}
                 action={async (contract) => {
                   await contract.erc721.claim(1);
                 } }
@@ -271,9 +271,9 @@ function Task() {
           <p>Now Mint Your NFT</p>
           <Web3Button
             style={web}
-            contractAddress="0x1Bc34Fc48b623aDb47A04103859fCE7a36C8875b"
+            contractAddress="0x8b2eb805A9066301959ecD7CfbD31b3F49d360cC"
             onSuccess={handleSuccess}
-            onError={(error) => console.error("Minting error:", error)}
+            onError={(_error) => alert("Not Enoght Matic")}
             action={async (contract) => {
               await contract.erc721.claim(1);
             }}

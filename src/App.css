@@ -178,6 +178,16 @@ nav {
   background-color: transparent;
   font-weight: 800;
 }
+.xinput[type="number"] {
+  padding: 15px;
+  padding-right: 80px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  width: 300px; 
+  box-sizing: border-box;
+  background-color: transparent;
+  font-weight: 800;
+}
 
 .xbutton {
   position: absolute;

@@ -8,7 +8,7 @@ type User = {
   points: number;
 };
 
-function Home() {
+function Section1() {
   const [topUsers, setTopUsers] = useState<User[]>([]);
 
   useEffect(() => {
@@ -68,4 +68,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Section1;
