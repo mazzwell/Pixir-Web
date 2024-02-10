@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Web3Button } from "@thirdweb-dev/react";
 import { getDatabase, ref, get, update, set } from "firebase/database";
 import { auth } from './firebase';
 
