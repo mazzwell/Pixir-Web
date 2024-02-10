@@ -268,16 +268,11 @@ function Task() {
       {web3ButtonVisible && (
         <div>
           <p>Now Mint Your NFT</p>
-          <Web3Button
+          <a href="https://morkie.xyz/pixir"
             style={web}
-            contractAddress="0x8b2eb805A9066301959ecD7CfbD31b3F49d360cC"
-            onSuccess={handleSuccess}
-            action={async (contract) => {
-              await contract.erc721.claim(1);
-            }}
           >
             {web3ButtonLoading ? "Loading..." : "Claim NFT"}
-          </Web3Button>
+          </a>
         </div>
       )}
     </>
