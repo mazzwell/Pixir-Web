@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Web3Button } from "@thirdweb-dev/react";
 
 function Section3() {
   const [inputValue, setInputValue] = useState<number>(100000); // Initial value set to 5000
@@ -47,14 +46,10 @@ function Section3() {
             />
             <div>Selected amount: {inputValue.toLocaleString()}</div> {/* Display the selected amount */}
             <br/>
-            <Web3Button
+            <a
                 style={web}
-                contractAddress="0x7371A967C8F53F0B4586F5EbCaFcA9EacEcCCF41"
-                action={async (contract) => {
-                  await contract.erc20.claim(inputValue);
-                }}
-              > Buy&nbsp;&nbsp;Pixir
-            </Web3Button>
+              > Coming&nbsp;&nbsp;Soon
+            </a>
           </div>
         </div>
       </div>
