@@ -29,7 +29,8 @@ function Section3() {
             <h1> Pixir Token </h1>
             <p> 30% discount for early birds </p>
             <a> Price: 0.001 MATIC </a>
-            <br/>
+            <br></br>
+            <br></br>
             <a href="https://morkie.xyz/pixir"
                 style={web}
               > Buy&nbsp;&nbsp;$Pixir
