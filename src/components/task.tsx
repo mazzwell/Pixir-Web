@@ -199,9 +199,6 @@ function Task() {
   if (successStatus) {
     return (
       <>
-      <br></br>
-      <br></br>
-              <br></br>
         <p>Your Points: &nbsp; {points}</p>
         <p>Your Referral ID: &nbsp; {referralID}</p>
         {!evmAddressSubmitted && (
