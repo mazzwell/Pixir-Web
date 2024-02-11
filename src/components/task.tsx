@@ -222,7 +222,7 @@ function Task() {
         <> <br></br>
         {
   !referralSubmitted && (
-    <><p>Example: Q6DPE3</p><div className="input-wrapper">
+    <><div className="input-wrapper">
                 <input
                   className="xinput"
                   type="text"
