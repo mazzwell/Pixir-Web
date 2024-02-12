@@ -1,5 +1,5 @@
 import viteLogo from '/pixir.png';
-import './App.css';
+import './styles/Home.css'
 import TwitterLoginButton from './components/Login';
 
 

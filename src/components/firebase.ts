@@ -2,16 +2,15 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, TwitterAuthProvider } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB0WZhW3YQcUTH8zdzLKgPv6vh3S0EAro8",
-  authDomain: "pixir-6d3cb.firebaseapp.com",
-  databaseURL: "https://pixir-6d3cb-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "pixir-6d3cb",
-  storageBucket: "pixir-6d3cb.appspot.com",
-  messagingSenderId: "1035920511052",
-  appId: "1:1035920511052:web:56309b94eb21c1f2c824e9",
-  measurementId: "G-KPZQTLXNLG"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
-
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);

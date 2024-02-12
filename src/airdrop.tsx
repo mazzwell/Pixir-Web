@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getDatabase, ref, get, query, orderByChild, limitToLast } from "firebase/database";
-import './App.css';
+import './styles/Home.css'
 
 // Define a type for user data
 type User = {

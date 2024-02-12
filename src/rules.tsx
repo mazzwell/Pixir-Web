@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/Home.css'
 
 function Section2() {
   return (

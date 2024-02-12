@@ -4,7 +4,7 @@ import Section1 from './airdrop';
 import Section2 from './rules';
 import Section3 from './shop';
 import Navbar from './Navbar';
-import './App.css';
+import './styles/Home.css'
 
 function App() {
   return (
