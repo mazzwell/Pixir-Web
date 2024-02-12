@@ -34,6 +34,7 @@ function Section3() {
           <div className="flex-item-right">
             <h1> Pixir Token </h1>
             <p> 20% discount For early birds </p>
+            <p> Price: 0.001 Matic </p>
             <input
               type="range"
               min="1000" // Minimum value for the slider
