@@ -56,6 +56,7 @@ To run this project, you will need to add environment variables. Create Env file
 }
 ```
 
+### Make to set up the twitter auth in firebase
 
 ## Technology Stack
 
