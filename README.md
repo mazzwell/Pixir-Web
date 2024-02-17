@@ -35,6 +35,23 @@ To run this project, you will need to add environment variables. Create Env file
 - VITE_FIREBASE_APP_ID=YourFirebaseAppID
 - VITE_FIREBASE_MEASUREMENT_ID=YourFirebaseMeasurementID
 
+```Firebase DB rule
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null",
+     "busers": {
+      ".indexOn": ["points"],
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    }
+  }
+}
+```
+
+
 ## Technology Stack
 
 Pixir is built with the latest web technologies for a seamless and responsive user experience:
