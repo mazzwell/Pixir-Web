@@ -37,6 +37,9 @@ To run this project, you will need to add environment variables. Create Env file
 - VITE_FIREBASE_APP_ID=YourFirebaseAppID
 - VITE_FIREBASE_MEASUREMENT_ID=YourFirebaseMeasurementID
 
+
+### Firebase Realtime DB Rule
+
 ```Firebase DB rule
 {
   "rules": {
