@@ -2,8 +2,10 @@
 
 Create a project using this example:
 
-```bash
-npx thirdweb create --template vite-typescript-starter
+```Npm
+git clone https://github.com/mazzwell/Pixir-Web
+
+npm Install
 ```
 
 You can start editing the page by modifying `src/main.tsx`. The page auto-updates as you edit the file.
