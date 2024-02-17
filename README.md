@@ -17,16 +17,15 @@ On `src/index.tsx`, you'll find our `ThirdwebProvider` wrapping your app, this i
 
 To run this project, you will need to add environment variables. Create Env file for all the environment variables required and add it to `.env.local` file or set them up on your hosting provider.
 
-VITE_TEMPLATE_CLIENT_ID= {Thirdweb Client ID}
-VITE_FIREBASE_API_KEY=
-VITE_FIREBASE_AUTH_DOMAIN=
-VITE_FIREBASE_DATABASE_URL=
-VITE_FIREBASE_PROJECT_ID=
-VITE_FIREBASE_STORAGE_BUCKET=
-VITE_FIREBASE_MESSAGING_SENDER_ID=
-VITE_FIREBASE_APP_ID=
-VITE_FIREBASE_MEASUREMENT_ID=
-
+VITE_TEMPLATE_CLIENT_ID=YourThirdwebClientID
+VITE_FIREBASE_API_KEY=YourFirebaseAPIKey
+VITE_FIREBASE_AUTH_DOMAIN=YourFirebaseAuthDomain
+VITE_FIREBASE_DATABASE_URL=YourFirebaseDatabaseURL
+VITE_FIREBASE_PROJECT_ID=YourFirebaseProjectID
+VITE_FIREBASE_STORAGE_BUCKET=YourFirebaseStorageBucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=YourFirebaseMessagingSenderID
+VITE_FIREBASE_APP_ID=YourFirebaseAppID
+VITE_FIREBASE_MEASUREMENT_ID=YourFirebaseMeasurementID
 
 ## Technology Stack
 
