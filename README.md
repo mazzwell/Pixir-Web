@@ -23,6 +23,43 @@ Deploy a copy of your application to IPFS using the following command:
 yarn deploy
 ```
 
+## Technology Stack
+
+Pixir is built with the latest web technologies for a seamless and responsive user experience:
+
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A modern frontend build tool that significantly improves the development experience.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript, enhancing development efficiency and code quality.
+
+# Pixir NFT Contract and Web3 SDK Integration
+
+# Web
+
+Designed to integrate seamlessly with Blast blockchain, our system offers a robust platform for managing NFT drops, user authentication, and referral tracking.
+
+### Key Features
+
+- NFT Minting and Distribution: Automated monthly NFT drops to users' wallets.
+- Leaderboard System: Real-time tracking and display of top NFT holders and referrers.
+- Web3 Authentication: Secure login mechanism using Web3 wallets.
+- Referral System: Points accumulation for users referring new participants.
+
+## Dependencies
+
+Our project is built with a range of modern web development tools and libraries:
+
+- `@react-firebase/auth`: For integrating Firebase authentication.
+- `@thirdweb-dev/react` & `@thirdweb-dev/sdk`: To interact with Blast blockchain and manage NFTs.
+- `ethers`: Ethereum wallet and blockchain interaction.
+- `firebase`: Backend service for authentication and data storage.
+- `react`, `react-dom`, `react-router-dom`: Frontend library and routing.
+- `typed.js`: For animated typing effects.
+
+Development dependencies include TypeScript, ESLint, and Vite for a streamlined development process.
+
+## Contact us
+Email pixirnft@gmail.com
+
 ## Learn More
 
 To learn more about thirdweb, Vite and React, take a look at the following resources:
