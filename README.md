@@ -1,4 +1,6 @@
-# Pixir Web Project 🌐
+# Pixir.Fun Project 🌐
+
+Calling all crypto hunters! Pixir is your ultimate playground. Compete in exhilarating treasure hunts, gather one-of-a-kind NFTs, and unravel hidden secrets. Each task fuels your progress, pushing you closer to uncovering the ultimate prize. If you're seeking a fun and engaging way to explore the NFT universe, Pixir is your perfect adventure
 
 ## 🚀 Getting Started
 
