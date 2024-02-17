@@ -13,15 +13,18 @@ On `src/index.tsx`, you'll find our `ThirdwebProvider` wrapping your app, this i
 
 ## Environment Variables
 
-To run this project, you will need to add environment variables. Check the `.env.example` file for all the environment variables required and add it to `.env.local` file or set them up on your hosting provider.
+To run this project, you will need to add environment variables. Create Env file for all the environment variables required and add it to `.env.local` file or set them up on your hosting provider.
 
-### Deploy to IPFS
+VITE_TEMPLATE_CLIENT_ID= {Thirdweb Client ID}
+VITE_FIREBASE_API_KEY=
+VITE_FIREBASE_AUTH_DOMAIN=
+VITE_FIREBASE_DATABASE_URL=
+VITE_FIREBASE_PROJECT_ID=
+VITE_FIREBASE_STORAGE_BUCKET=
+VITE_FIREBASE_MESSAGING_SENDER_ID=
+VITE_FIREBASE_APP_ID=
+VITE_FIREBASE_MEASUREMENT_ID=
 
-Deploy a copy of your application to IPFS using the following command:
-
-```bash
-yarn deploy
-```
 
 ## Technology Stack
 
@@ -35,18 +38,22 @@ Pixir is built with the latest web technologies for a seamless and responsive us
 
 # Web
 
-Designed to integrate seamlessly with Blast blockchain, our system offers a robust platform for managing NFT drops, user authentication, and referral tracking.
+Designed to integrate seamlessly with EVM blockchain, our system offers a robust platform for managing NFT drops, user authentication, and referral tracking.
+Thanks to Thirdweb Powerful SDK.
 
 ### Key Features
 
-- NFT Minting and Distribution: Automated monthly NFT drops to users' wallets.
+- NFT Minting and Distribution: One click Way
 - Leaderboard System: Real-time tracking and display of top NFT holders and referrers.
-- Web3 Authentication: Secure login mechanism using Web3 wallets.
-- Referral System: Points accumulation for users referring new participants.
+- Web3 Authentication: WalletConnect By Thirdweb
+- Referral System: Points accumulation for users referring new participants. 
+- Dtabase System: Fireebase realtime database. 
+
 
 ## Dependencies
 
 Our project is built with a range of modern web development tools and libraries:
+Here is some core dependencies
 
 - `@react-firebase/auth`: For integrating Firebase authentication.
 - `@thirdweb-dev/react` & `@thirdweb-dev/sdk`: To interact with Blast blockchain and manage NFTs.
@@ -55,7 +62,7 @@ Our project is built with a range of modern web development tools and libraries:
 - `react`, `react-dom`, `react-router-dom`: Frontend library and routing.
 - `typed.js`: For animated typing effects.
 
-Development dependencies include TypeScript, ESLint, and Vite for a streamlined development process.
+Rest of the dependencies available on packeage.json
 
 ## Contact us
 Email pixirnft@gmail.com
@@ -71,8 +78,7 @@ To learn more about thirdweb, Vite and React, take a look at the following resou
 - [React documentation](https://reactjs.org/) - learn React.
 - [Templates](https://thirdweb.com/templates)
 
-You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
-
 ## Join our Discord!
 
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
+For any questions, suggestions, Email pixirnft@gmail.com
+
